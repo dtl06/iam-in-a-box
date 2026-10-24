@@ -1,0 +1,21 @@
+dn: dc=nordivia,dc=local
+objectClass: dcObject
+objectClass: organization
+dc: nordivia
+o: Nordivia
+
+dn: ou=people,dc=nordivia,dc=local
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=nordivia,dc=local
+objectClass: organizationalUnit
+ou: groups
+
+dn: ou=roles,dc=nordivia,dc=local
+objectClass: organizationalUnit
+ou: roles
+
+dn: ou=disabled,dc=nordivia,dc=local
+objectClass: organizationalUnit
+ou: disabled

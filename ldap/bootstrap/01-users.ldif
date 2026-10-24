@@ -1,0 +1,71 @@
+dn: uid=alice.dupont,ou=people,dc=nordivia,dc=local
+objectClass: inetOrgPerson
+uid: alice.dupont
+cn: Alice Dupont
+givenName: Alice
+sn: Dupont
+mail: alice.dupont@nordivia.local
+employeeNumber: 1001
+departmentNumber: rh
+title: Gestionnaire RH
+userPassword: {SSHA}elzOFi4hh3fc25RBB1zUUlQTI7cj8RknrSM6Sw==
+
+dn: uid=bruno.martin,ou=people,dc=nordivia,dc=local
+objectClass: inetOrgPerson
+uid: bruno.martin
+cn: Bruno Martin
+givenName: Bruno
+sn: Martin
+mail: bruno.martin@nordivia.local
+employeeNumber: 1002
+departmentNumber: finance
+title: Comptable
+userPassword: {SSHA}elzOFi4hh3fc25RBB1zUUlQTI7cj8RknrSM6Sw==
+
+dn: uid=chloe.bernard,ou=people,dc=nordivia,dc=local
+objectClass: inetOrgPerson
+uid: chloe.bernard
+cn: Chloé Bernard
+givenName: Chloé
+sn: Bernard
+mail: chloe.bernard@nordivia.local
+employeeNumber: 1003
+departmentNumber: it
+title: Administrateur IT
+userPassword: {SSHA}elzOFi4hh3fc25RBB1zUUlQTI7cj8RknrSM6Sw==
+
+dn: uid=david.petit,ou=people,dc=nordivia,dc=local
+objectClass: inetOrgPerson
+uid: david.petit
+cn: David Petit
+givenName: David
+sn: Petit
+mail: david.petit@nordivia.local
+employeeNumber: 1004
+departmentNumber: commercial
+title: Commercial
+userPassword: {SSHA}elzOFi4hh3fc25RBB1zUUlQTI7cj8RknrSM6Sw==
+
+dn: uid=emma.roux,ou=people,dc=nordivia,dc=local
+objectClass: inetOrgPerson
+uid: emma.roux
+cn: Emma Roux
+givenName: Emma
+sn: Roux
+mail: emma.roux@nordivia.local
+employeeNumber: 1005
+departmentNumber: rh
+title: Gestionnaire RH
+userPassword: {SSHA}elzOFi4hh3fc25RBB1zUUlQTI7cj8RknrSM6Sw==
+
+dn: uid=farid.benali,ou=people,dc=nordivia,dc=local
+objectClass: inetOrgPerson
+uid: farid.benali
+cn: Farid Benali
+givenName: Farid
+sn: Benali
+mail: farid.benali@nordivia.local
+employeeNumber: 1006
+departmentNumber: it
+title: Technicien support
+userPassword: {SSHA}elzOFi4hh3fc25RBB1zUUlQTI7cj8RknrSM6Sw==

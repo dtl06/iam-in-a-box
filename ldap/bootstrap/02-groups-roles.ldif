@@ -1,0 +1,59 @@
+# Le membre placeholder n'est jamais retiré : un groupOfNames doit garder au moins un member.
+
+# Services (organisation : qui est où)
+dn: cn=rh,ou=groups,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: rh
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=alice.dupont,ou=people,dc=nordivia,dc=local
+member: uid=emma.roux,ou=people,dc=nordivia,dc=local
+
+dn: cn=finance,ou=groups,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: finance
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=bruno.martin,ou=people,dc=nordivia,dc=local
+
+dn: cn=it,ou=groups,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: it
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=chloe.bernard,ou=people,dc=nordivia,dc=local
+member: uid=farid.benali,ou=people,dc=nordivia,dc=local
+
+dn: cn=commercial,ou=groups,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: commercial
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=david.petit,ou=people,dc=nordivia,dc=local
+
+# Rôles applicatifs (droits : qui peut faire quoi)
+dn: cn=employe,ou=roles,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: employe
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=alice.dupont,ou=people,dc=nordivia,dc=local
+member: uid=bruno.martin,ou=people,dc=nordivia,dc=local
+member: uid=chloe.bernard,ou=people,dc=nordivia,dc=local
+member: uid=david.petit,ou=people,dc=nordivia,dc=local
+member: uid=emma.roux,ou=people,dc=nordivia,dc=local
+member: uid=farid.benali,ou=people,dc=nordivia,dc=local
+
+dn: cn=rh_gestion,ou=roles,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: rh_gestion
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=alice.dupont,ou=people,dc=nordivia,dc=local
+member: uid=emma.roux,ou=people,dc=nordivia,dc=local
+
+dn: cn=paie_validation,ou=roles,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: paie_validation
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=bruno.martin,ou=people,dc=nordivia,dc=local
+
+dn: cn=admin_it,ou=roles,dc=nordivia,dc=local
+objectClass: groupOfNames
+cn: admin_it
+member: cn=placeholder,dc=nordivia,dc=local
+member: uid=chloe.bernard,ou=people,dc=nordivia,dc=local
