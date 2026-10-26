@@ -1,0 +1,7 @@
+# Séparation des tâches (SoD) : paires de rôles qu'une même personne ne doit pas cumuler.
+- roles: [rh_gestion, paie_validation]
+  raison: "créer un salarié et valider sa paie = fraude possible (salarié fictif)"
+- roles: [admin_it, paie_validation]
+  raison: "un administrateur ne valide pas de flux financiers (il pourrait effacer ses traces)"
+- roles: [admin_it, rh_gestion]
+  raison: "un administrateur ne gère pas les dossiers du personnel (il pourrait s'attribuer des droits via un faux poste)"

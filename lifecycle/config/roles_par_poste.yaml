@@ -5,3 +5,7 @@ Comptable:          [employe, paie_validation]
 Administrateur IT:  [employe, admin_it]
 Technicien support: [employe]
 Commercial:         [employe]
+
+# Poste créé pour J2 : il cumule deux rôles incompatibles (voir sod_rules.yaml).
+# jml.py l'applique sans broncher, c'est access_review.py qui doit lever le conflit.
+Responsable RH et paie: [employe, rh_gestion, paie_validation]
