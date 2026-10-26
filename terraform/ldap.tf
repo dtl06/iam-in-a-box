@@ -23,6 +23,10 @@ resource "keycloak_ldap_user_federation" "openldap" {
   sync_registrations = false
   trust_email        = true
 
+  # Les mappers créés par défaut par Keycloak lisent le prénom dans « cn » (nom complet) :
+  # on les supprime et on déclare nous-mêmes chaque correspondance (voir plus bas).
+  delete_default_mappers = true
+
   full_sync_period    = 86400 # synchro complète une fois par jour
   changed_sync_period = 60    # synchro des modifiés toutes les 60 s
 }
@@ -66,6 +70,30 @@ resource "keycloak_ldap_role_mapper" "roles" {
 }
 
 # Attributs métier exposés dans Keycloak
+# Attributs standard de Keycloak (dont le prénom lu dans givenName, et non dans cn)
+locals {
+  ldap_attributs_standard = {
+    username  = "uid"
+    firstName = "givenName"
+    lastName  = "sn"
+    email     = "mail"
+  }
+}
+
+resource "keycloak_ldap_user_attribute_mapper" "standard" {
+  for_each                = local.ldap_attributs_standard
+  name                    = each.key
+  realm_id                = keycloak_realm.nordivia.id
+  ldap_user_federation_id = keycloak_ldap_user_federation.openldap.id
+
+  user_model_attribute        = each.key
+  ldap_attribute              = each.value
+  read_only                   = true
+  always_read_value_from_ldap = true
+  is_mandatory_in_ldap        = true
+}
+
+# Attributs métier (aussi exposés dans le jeton par clients.tf)
 locals {
   ldap_attributes = {
     matricule = "employeeNumber"

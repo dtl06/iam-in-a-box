@@ -98,6 +98,12 @@ Les six salariés de J0 ont le mot de passe `Nordivia2026!`. Il est stocké hach
 
 ## Démonstration
 
+### SSO et MFA
+
+| Profil lu dans l'ID token | 403 sans `admin_it` | Enrôlement OTP imposé à `admin_it` |
+|---|---|---|
+| ![Profil d'Alice](docs/01-profil-alice.png) | ![403](docs/02-admin-403-alice.png) | ![OTP](docs/03-otp-enrolement-chloe.png) |
+
 ### J0 → J1 : une arrivée, une mobilité, un départ
 
 ```text
@@ -118,6 +124,10 @@ Après application :
 - Gabriel se connecte avec le mot de passe initial, affiché une seule fois ;
 - une seconde exécution répond « aucun changement ».
 
+| Bruno (parti) ne peut plus se connecter | Emma (mutée) n'a plus `rh_gestion` |
+|---|---|
+| ![Connexion refusée](docs/04-bruno-connexion-refusee.png) | ![Profil d'Emma](docs/05-profil-emma-mobilite.png) |
+
 Chaque action est tracée dans `lifecycle/logs/jml.csv` (horodatage, matricule, action, état avant, état après).
 
 ### J1 → J2 : détection d'un conflit de séparation des tâches
@@ -129,7 +139,20 @@ python lifecycle/jml.py lifecycle/hr/export_j2.csv
 python lifecycle/access_review.py lifecycle/hr/export_j2.csv --jours 30
 ```
 
-<!-- TODO : coller ici la sortie console de access_review.py et la capture docs/revue_j2.png -->
+```text
+$ python lifecycle/access_review.py lifecycle/hr/export_j2.csv
+6 comptes analysés, 6 constat(s) :
+  [critique] Conflit SoD        alice.dupont               cumule rh_gestion + paie_validation : créer un salarié et valider sa paie = fraude possible (salarié fictif)
+  [critique] Modèle toxique     poste « Responsable RH et paie » le modèle de rôles attribue rh_gestion + paie_validation à ce poste
+  [ faible ] Jamais connecté    chloe.bernard              aucune connexion enregistrée (compte créé il y a 0 j)
+  [ faible ] Jamais connecté    david.petit                aucune connexion enregistrée (compte créé il y a 0 j)
+  [ faible ] Jamais connecté    farid.benali               aucune connexion enregistrée (compte créé il y a 0 j)
+  [ faible ] Jamais connecté    gabriel.moreau             aucune connexion enregistrée (compte créé il y a 0 j)
+
+Rapports : reports/revue_2026-10-26.csv  et  reports/revue_2026-10-26.html
+```
+
+![Rapport de revue des accès J2](docs/06-revue-acces-j2.png)
 
 La revue produit `reports/revue_AAAA-MM-JJ.csv` pour l'outillage, et une page HTML triée par gravité pour un manager.
 
