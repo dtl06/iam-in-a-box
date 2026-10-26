@@ -74,7 +74,7 @@ docker compose up -d
 cd terraform && set -a && . ../.env && set +a && terraform init && terraform apply
 ```
 
-Keycloak met environ 30 secondes à démarrer : si `terraform apply` échoue avec une erreur de connexion, attends un peu et relance-le. La synchronisation périodique importe les utilisateurs LDAP dans la minute qui suit. Tu peux aussi la lancer à la main : console → *User federation* → `openldap` → *Sync all users*.
+Keycloak met environ 30 secondes à démarrer : si `terraform apply` échoue avec une erreur de connexion, il suffit de le relancer. La synchronisation périodique importe les utilisateurs LDAP dans la minute qui suit. On peut aussi la lancer à la main : console → *User federation* → `openldap` → *Sync all users*.
 
 Ensuite, les outils Python :
 ```bash
