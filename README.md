@@ -176,3 +176,7 @@ La revue produit `reports/revue_AAAA-MM-JJ.csv` pour l'outillage, et une page HT
 - Un utilisateur dont la session SSO existait avant l'attribution de `admin_it` n'est soumis à l'OTP qu'à sa reconnexion (pas d'authentification *step-up*).
 
 **En production** : TLS partout (LDAPS), Keycloak en cluster derrière un reverse proxy, secrets et state Terraform dans un coffre-fort (Vault, backend chiffré), compte de service LDAP dédié, événements envoyés vers un SIEM, et `jml.py` branché sur le SIRH avec gestion des dates d'effet.
+
+## Licence
+
+[MIT](LICENSE). Projet pédagogique : les données (Nordivia, salariés, mots de passe de démonstration) sont fictives.
