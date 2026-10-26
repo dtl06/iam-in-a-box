@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Portail RH · Nordivia</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; color: #1f2937; }
+    nav { display: flex; gap: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #e5e7eb; margin-bottom: 1.5rem; }
+    nav .droite { margin-left: auto; color: #6b7280; }
+    table { border-collapse: collapse; } td, th { text-align: left; padding: .3rem 1rem .3rem 0; }
+    code { background: #f3f4f6; padding: 0 .25rem; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="{{ url_for('index') }}">Accueil</a>
+    <a href="{{ url_for('profil') }}">Profil</a>
+    <a href="{{ url_for('admin') }}">Admin</a>
+    {% if user %}
+      <span class="droite">{{ user.username }} · <a href="{{ url_for('logout') }}">Déconnexion</a></span>
+    {% else %}
+      <a class="droite" href="{{ url_for('login') }}">Connexion</a>
+    {% endif %}
+  </nav>
+  {% block contenu %}{% endblock %}
+</body>
+</html>

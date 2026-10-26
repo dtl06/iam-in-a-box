@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block contenu %}
+<h1>Administration du SI</h1>
+<p>Accès réservé au rôle <code>admin_it</code>, protégé par MFA.</p>
+<p>Bienvenue, {{ user.nom }}.</p>
+{% endblock %}

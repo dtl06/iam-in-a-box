@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block contenu %}
+<h1>Portail RH de Nordivia</h1>
+{% if user %}
+  <p>Connecté en tant que <strong>{{ user.nom }}</strong>.</p>
+{% else %}
+  <p>Page publique. <a href="{{ url_for('login') }}">Se connecter</a> via le SSO Nordivia.</p>
+{% endif %}
+{% endblock %}

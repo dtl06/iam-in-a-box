@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block contenu %}
+<h1>Mon profil</h1>
+<table>
+  <tr><th>Nom</th><td>{{ user.nom }}</td></tr>
+  <tr><th>E-mail</th><td>{{ user.email }}</td></tr>
+  <tr><th>Matricule</th><td>{{ user.matricule }}</td></tr>
+  <tr><th>Poste</th><td>{{ user.poste }}</td></tr>
+  <tr><th>Service</th><td>{{ user.service }}</td></tr>
+  <tr><th>Rôles</th><td>{% for r in user.roles|sort %}<code>{{ r }}</code> {% endfor %}</td></tr>
+</table>
+<p><small>Informations lues dans l'ID token émis par Keycloak.</small></p>
+{% endblock %}

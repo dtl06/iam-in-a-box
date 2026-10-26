@@ -7,6 +7,10 @@ resource "keycloak_openid_client" "portail_rh" {
   # Application côté serveur : elle peut garder un secret
   access_type = "CONFIDENTIAL"
 
+  # Secret fixé dans le .env (et non généré par Keycloak) : il survit à un destroy/apply
+  # et Flask lit la même valeur. Injecté via TF_VAR_portail_rh_client_secret.
+  client_secret = var.portail_rh_client_secret
+
   # Uniquement le flux « authorization code » + PKCE
   standard_flow_enabled        = true
   implicit_flow_enabled        = false
@@ -47,9 +51,4 @@ resource "keycloak_openid_user_realm_role_protocol_mapper" "roles" {
   add_to_id_token     = true
   add_to_access_token = false # déjà présent via le scope « roles » par défaut
   add_to_userinfo     = true
-}
-
-output "portail_rh_client_secret" {
-  value     = keycloak_openid_client.portail_rh.client_secret
-  sensitive = true
 }
