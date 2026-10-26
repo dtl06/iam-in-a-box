@@ -1,0 +1,7 @@
+# Modèle de rôles (RBAC) : le poste détermine les rôles applicatifs.
+# Un poste absent de ce fichier est refusé par jml.py : pas de droits par défaut.
+Gestionnaire RH:    [employe, rh_gestion]
+Comptable:          [employe, paie_validation]
+Administrateur IT:  [employe, admin_it]
+Technicien support: [employe]
+Commercial:         [employe]

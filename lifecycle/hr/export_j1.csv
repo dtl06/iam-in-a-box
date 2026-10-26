@@ -1,0 +1,8 @@
+matricule,prenom,nom,email,service,poste,statut,date_effet
+1001,Alice,Dupont,alice.dupont@nordivia.local,rh,Gestionnaire RH,actif,2021-03-01
+1002,Bruno,Martin,bruno.martin@nordivia.local,finance,Comptable,parti,2026-10-23
+1003,Chloé,Bernard,chloe.bernard@nordivia.local,it,Administrateur IT,actif,2020-01-06
+1004,David,Petit,david.petit@nordivia.local,commercial,Commercial,actif,2022-05-02
+1005,Emma,Roux,emma.roux@nordivia.local,commercial,Commercial,actif,2026-10-26
+1006,Farid,Benali,farid.benali@nordivia.local,it,Technicien support,actif,2024-11-04
+1007,Gabriel,Moreau,gabriel.moreau@nordivia.local,finance,Comptable,actif,2026-10-26
